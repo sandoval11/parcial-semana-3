@@ -1,0 +1,13 @@
+Soporte
+@app.route('/empleado/<int:id>/', methods=['GET'])
+def get_empleado_by_id():
+        item = Empleado.query.get(id)
+        if item:
+                result = {
+                        "id": i.id,
+                        "first_name": i.first_name,
+                        "last_name": i.last_name,
+                        "age": i.age
+                 }
+                return {"status":200, "data": result}
+
